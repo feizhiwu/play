@@ -40,14 +40,14 @@ function getRand(array $award) {
 		$arr[] = $v;
 	}
 	//获取所有权重大于随机值的奖品
-	$rand = rand(0, $max);
+	$rand = mt_rand(0, $max);
 	foreach ($arr as $v) {
 		if ($v['weight'] >= $rand) {
 			$res[] = $v;
 		}
 	}
 	//随机返回一个奖品
-	$rand = rand(0, count($res) - 1);
+	$rand = mt_rand(0, count($res) - 1);
 
 	return $res[$rand];
 }
